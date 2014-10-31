@@ -71,7 +71,7 @@
     <javac srcdir="${src}" destdir="${classes}" deprecation="on" debug="on">
       <classpath refid="classpath"/>
     </javac>
-    <javac srcdir="${test}" destdir="${testclasses}" deprecation="on" debug="on">
+    <javac includeantruntime="false" srcdir="${test}" destdir="${testclasses}" deprecation="on" debug="on">
       <classpath refid="classpath"/>
     </javac>
   </target>
