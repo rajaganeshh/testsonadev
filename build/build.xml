@@ -90,7 +90,7 @@
   <target name="test" depends="coverage.instrument">
     <junit printsummary="yes" haltonfailure="no">
       <classpath refid="classpath"/>
-
+<jvmarg value="-XX:MaxPermSize=256m"/>
       <formatter type="xml"/>
 
       <batchtest fork="yes" todir="${junitreports}">
