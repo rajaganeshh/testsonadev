@@ -88,10 +88,10 @@
   </target>
 
   <target name="test" depends="coverage.instrument">
-    <junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once" maxmemory="512m" failureproperty="junit.failure">
+    <junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="perBatch" maxmemory="512m" failureproperty="junit.failure">
       <jvmarg value="-Xdebug" />
       <jvmarg value="-XX:-UseSplitVerifier"/>
-
+      <jvmarg value="-Xmx512M"/>
 
       <classpath refid="classpath"/>
           
