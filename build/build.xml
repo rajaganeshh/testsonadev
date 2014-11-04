@@ -95,7 +95,7 @@
      
       <classpath refid="classpath"/>
           <formatter type="xml"/>
-      <batchtest fork="yes" forkmode="perBatch" maxmemory="1024m" todir="${junitreports}">
+      <batchtest fork="yes" todir="${junitreports}">
         <fileset dir="${test}">
           <include name="**/*Test*.java"/>
           <exclude name="**/AllTests.java"/>
