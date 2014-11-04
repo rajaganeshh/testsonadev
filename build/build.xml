@@ -88,11 +88,13 @@
   </target>
 
   <target name="test" depends="coverage.instrument">
-    <junit printsummary="yes" haltonfailure="no">
-      <classpath refid="classpath"/>
-<jvmarg value="-XX:MaxPermSize=256m"/>
-      <formatter type="xml"/>
+    <junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once" maxmemory="512m" failureproperty="junit.failure">
+      <jvmarg value="-Xdebug" />
+        <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5432" />
 
+      <classpath refid="classpath"/>
+          
+      <formatter type="xml"/>
       <batchtest fork="yes" todir="${junitreports}">
         <fileset dir="${test}">
           <include name="**/*Test*.java"/>
