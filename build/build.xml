@@ -68,7 +68,7 @@
   </target>
 
   <target name="compile" depends="prepare">
-    <javac srcdir="${src}" destdir="${classes}" deprecation="on" debug="on">
+    <javac srcdir="${src}" destdir="${classes}" deprecation="on" debug="on"  includeantruntime="false">
       <classpath refid="classpath"/>
     </javac>
     <javac includeantruntime="false" srcdir="${test}" destdir="${testclasses}" deprecation="on" debug="on">
@@ -81,23 +81,21 @@
       <instr instrpath="${classes}"
         destdir="${instrumentedclasses}"
         metadatafile="./coverage.ec"
-        merge="true"
-        >
+        merge="true">
       </instr>
     </emma>
   </target>
 
   <target name="test" depends="coverage.instrument">
-    <junit printsummary="yes" haltonfailure="no" fork="yes"  forkmode="perBatch" maxmemory="4096m" failureproperty="junit.failure">
-     
+    <junit printsummary="yes" haltonfailure="no" newenvironment="true" fork="yes"  forkmode="perBatch" maxmemory="1024m" failureproperty="junit.failure">
+      <jvmarg value="-Xdebug" />
       <jvmarg value="-XX:-UseSplitVerifier"/>
-      <jvmarg value="-Xmx4096M"/>
+      <jvmarg value="-Xmx1024M"/>
       
- 
+     
       <classpath refid="classpath"/>
-          
-      <formatter type="xml"/>
-      <batchtest fork="yes" todir="${junitreports}">
+          <formatter type="xml"/>
+      <batchtest fork="no" todir="${junitreports}">
         <fileset dir="${test}">
           <include name="**/*Test*.java"/>
           <exclude name="**/AllTests.java"/>
