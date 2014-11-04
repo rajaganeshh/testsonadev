@@ -28,7 +28,7 @@
     <pathelement location="${testclasses}"/>
     <pathelement location="${src}"/>
     <pathelement location="${test}"/>
-    <fileset dir="${lib}" includes="**/*.jar"/>
+    <fileset dir="${lib}" includes="**/*.jar"/> 
     <fileset dir="${devlib}" includes="**/*.jar"/>
   </path>
 
