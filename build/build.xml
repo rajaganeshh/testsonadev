@@ -92,7 +92,6 @@
       <jvmarg value="-XX:-UseSplitVerifier"/>
       <jvmarg value="-Xmx1024M"/>
       <jvmarg value="-DSERIAL_PORT=9009"/>
-      <jvmarg line="-agentlib:jdwp=server=y,suspend=n" />
       <jvmarg value="-Xnoagent"/>
       <jvmarg value="-Djava.compiler=none"/>
      
