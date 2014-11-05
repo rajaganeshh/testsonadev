@@ -87,12 +87,14 @@
   </target>
 
   <target name="test" depends="coverage.instrument">
-    <junit printsummary="yes" haltonfailure="no" forkmode="once" maxmemory="1024m" failureproperty="junit.failure">
+    <junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once" maxmemory="1024m" failureproperty="junit.failure">
+      <classpath refid="classpath"/>
       <jvmarg value="-Xdebug" />
+      <jvmarg value="-Xnoagent"/>
       <jvmarg value="-XX:-UseSplitVerifier"/>
       <jvmarg value="-Xmx1024M"/>
       <jvmarg value="-Djava.compiler=none"/>
-        <classpath refid="classpath"/>
+        
           <formatter type="xml"/>
       <batchtest fork="yes" todir="${junitreports}">
         <fileset dir="${test}">
