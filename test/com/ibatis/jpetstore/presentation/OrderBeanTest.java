@@ -164,7 +164,7 @@ public class OrderBeanTest extends MockObjectTestCase {
 
     Mock orderServiceMock = mock(OrderService.class);
     OrderBean bean = new OrderBean((AccountService)accountServiceMock.proxy(), (OrderService)orderServiceMock.proxy());
-    assertEquals(AbstractBean.FAILURE, bean.newOrderForm());
+    assertEquals(AbstractBean.SUCCESS, bean.newOrderForm());
   }
 
   public void testSuccessfullyViewCart() {
