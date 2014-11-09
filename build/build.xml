@@ -162,13 +162,9 @@
       </fileset>
     </jar>
   </target>
+  
+  
 
-  <target name="all" depends="test.report, coverage.report, war">
-  <property name="copywarfile" value="d:\created"/>
-  <copy todir="{copywarfile}">
-    <fileset dir="${wars}">
-      <include name="*.*"/>
-    </fileset>
-  </copy>
-  </target>
+  <target name="all" depends="test.report, coverage.report, war"/>
+  
 </project>
