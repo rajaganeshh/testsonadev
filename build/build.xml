@@ -168,7 +168,7 @@
 
   <target name="all" depends="test.report, coverage.report, war">
   
-  <copy todir="{copywarfile}">
+  <copy todir="${copywarfile}">
     <fileset dir="${wars}"/>
     
   </copy>
