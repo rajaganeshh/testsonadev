@@ -1,5 +1,6 @@
 <project name="JPetStore" default="all" basedir=".">
 
+  <property name="copywarfile" value="D:\created"/ location="directory">
   <property name="web" value="../web"/>
   <property name="src" value="../src"/>
   <property name="test" value="../test"/>
@@ -166,11 +167,10 @@
   
 
   <target name="all" depends="test.report, coverage.report, war">
-  <property name="copywarfile" value="d:\created"/>
+  
   <copy todir="{copywarfile}">
-    <fileset dir="${wars}">
-      <include name="*.*"/>
-    </fileset>
+    <fileset dir="${wars}"/>
+    
   </copy>
   </target>
   
