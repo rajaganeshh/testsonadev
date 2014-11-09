@@ -1,6 +1,6 @@
 <project name="JPetStore" default="all" basedir=".">
 
-  <property name="copywarfile" value="D:\created"/ location="directory">
+  <property name="copywarfile" value="D:\created"/>
   <property name="web" value="../web"/>
   <property name="src" value="../src"/>
   <property name="test" value="../test"/>
