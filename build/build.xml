@@ -59,7 +59,7 @@
     <mkdir dir="${classes}"/>
     <mkdir dir="${testclasses}"/>
     <mkdir dir="${instrumentedclasses}"/>
-    <mkdir dir=${web}"/>
+    <mkdir dir="${web}"/>
     <mkdir dir="${junitreports}"/>
     <mkdir dir="${coveragereports}"/>
 
