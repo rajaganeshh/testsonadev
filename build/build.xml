@@ -65,7 +65,7 @@
 
     <mkdir dir="${webclasses}"/>
     <mkdir dir="${weblib}"/>
-
+  <mkdir dir="${web}"/>
     <mkdir dir="${wars}"/>
   </target>
 
