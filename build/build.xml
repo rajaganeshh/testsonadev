@@ -42,7 +42,7 @@
     <delete dir="${wars}"/>
     <delete dir="${webapp}"/>
     <delete file="coverage.ec"/>
-    <delete dir="${web}"/>
+  
     <delete>
       <fileset dir="${src}">
         <include name="**/*.class"/>
@@ -65,7 +65,7 @@
 
     <mkdir dir="${webclasses}"/>
     <mkdir dir="${weblib}"/>
-  <mkdir dir="${web}"/>
+ 
     <mkdir dir="${wars}"/>
   </target>
 
