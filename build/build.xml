@@ -42,7 +42,7 @@
     <delete dir="${wars}"/>
     <delete dir="${webapp}"/>
     <delete file="coverage.ec"/>
-    <delete file="index.html"/>
+    <delete dir=${web}"/>
     <delete>
       <fileset dir="${src}">
         <include name="**/*.class"/>
