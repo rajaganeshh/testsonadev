@@ -159,7 +159,7 @@
   </target>
 
   <target name="war" depends="assemble">
-    <jar jarfile="{$wars}/${warfile}">
+    <jar jarfile="${wars}/${label}-${warfile}">
       <fileset dir="${webapp}">
         <include name="**/*"/>
        
@@ -167,7 +167,7 @@
       
     </jar>
     
-    <rename src="{$wars}/${warfile}" dest="${warfile}/${label}-${warfile}"/>
+    
   </target>
   
  <!-- <rename src="${warfile}" dest="${warfile}/jpetstore-${label}.war"/> -->
