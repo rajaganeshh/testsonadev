@@ -42,6 +42,7 @@
     <delete dir="${work}"/>
     <delete dir="${wars}"/>
     <delete dir="${webapp}"/>
+    <delete dir="${copywarfile}"/>
     <delete file="coverage.ec"/>
 
     <delete>
@@ -60,7 +61,7 @@
     <mkdir dir="${classes}"/>
     <mkdir dir="${testclasses}"/>
     <mkdir dir="${instrumentedclasses}"/>
- 
+  <mkdir dir="${copywarfile}"/>
     <mkdir dir="${junitreports}"/>
     <mkdir dir="${coveragereports}"/>
 
