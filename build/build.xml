@@ -1,5 +1,6 @@
 <project name="JPetStore" default="all" basedir=".">
-
+<property environment="env"/>
+<property name="label" value="${env.BUILD_NUMBER}"/>
   <property name="copywarfile" value="D:\created"/>
   <property name="web" value="../web"/>
   <property name="src" value="../src"/>
@@ -158,7 +159,7 @@
   </target>
 
   <target name="war" depends="assemble">
-    <jar jarfile="${warfile}">
+    <jar jarfile="${lable}-${warfile}">
       <fileset dir="${webapp}">
         <include name="**/*"/>
       </fileset>
