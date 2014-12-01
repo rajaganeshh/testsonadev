@@ -159,9 +159,10 @@
   </target>
 
   <target name="war" depends="assemble">
-    <jar jarfile="${lable}-${warfile}">
+    <jar jarfile="${warfile}">
       <fileset dir="${webapp}">
         <include name="**/*"/>
+       <rename src="jpetstore.war" dest="jpetstore-${label}.war"/>
       </fileset>
     </jar>
   </target>
