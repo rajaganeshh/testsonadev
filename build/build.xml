@@ -9,7 +9,7 @@
   <property name="devlib" value="../devlib"/>
 
   <property name="wars" value="wars"/>
-  <property name="warfile" value="${wars}/jpetstore.war"/>
+  <property name="warfile" value="jpetstore.war"/>
 
   <property name="webapp" value="webapp"/>
   <property name="weblib" value="${webapp}/WEB-INF/lib/"/>
@@ -159,15 +159,18 @@
   </target>
 
   <target name="war" depends="assemble">
-    <jar jarfile="${warfile}">
+    <jar jarfile="{$wars}/${warfile}">
       <fileset dir="${webapp}">
         <include name="**/*"/>
-       <rename src="jpetstore.war" dest="jpetstore-${label}.war"/>
+       
       </fileset>
+      
     </jar>
+    
+    <rename src="{$wars}/${warfile}" dest="${warfile}/${label}-${warfile}"/>
   </target>
   
-  
+ <!-- <rename src="${warfile}" dest="${warfile}/jpetstore-${label}.war"/> -->
 
   <target name="all" depends="test.report, coverage.report, war">
   
