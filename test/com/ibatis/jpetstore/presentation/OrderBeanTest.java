@@ -136,12 +136,7 @@ public class OrderBeanTest extends MockObjectTestCase {
     assertNull(bean.getOrder());
   }
 
-  public void testShouldForceSignonWhenAttemptingToCreateANewOrderWithoutBeingSignedIn () {
-    Mock accountServiceMock = mock(AccountService.class);
-    Mock orderServiceMock = mock(OrderService.class);
-    OrderBean bean = new OrderBean((AccountService)accountServiceMock.proxy(), (OrderService)orderServiceMock.proxy());
-    assertEquals(AbstractBean.SIGNON, bean.newOrderForm());
-  }
+  
 
   public void testShouldFailDueToAMissingCart () {
     Account account = DomainFixture.newTestAccount();
