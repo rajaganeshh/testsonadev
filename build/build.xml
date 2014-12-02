@@ -75,7 +75,7 @@
     <javac srcdir="${src}" destdir="${classes}" deprecation="on" debug="on"  includeantruntime="false">
       <classpath refid="classpath"/>
     </javac>
-    <javac includeantruntime="false" srcdir="${test}" destdir="${testclasses}" deprecation="on" debug="on">
+    <javac includeantruntime="false" srcdir="${test}" destdir="${testclasses}" deprecation="off" debug="off">
       <classpath refid="classpath"/>
     </javac>
   </target>
@@ -95,7 +95,7 @@
       <classpath refid="classpath"/>
       <jvmarg value="-Xdebug" />
       <jvmarg value="-Xnoagent"/>
-      <jvmarg value="-XX:+UseSplitVerifier"/>
+      <jvmarg value="-XX:-UseSplitVerifier"/>
       <jvmarg value="-Xmx1024M"/>
       <jvmarg value="-Djava.compiler=none"/>
         
