@@ -138,29 +138,7 @@ public class OrderBeanTest extends MockObjectTestCase {
 
   
 
-  public void testShouldFailDueToAMissingCart () {
-    Account account = DomainFixture.newTestAccount();
-    Mock accountServiceMock = mock(AccountService.class);
-    accountServiceMock.expects(once())
-        .method("getAccount")
-        .with(NOT_NULL,NOT_NULL)
-        .will(returnValue(account));
-    Mock catalogServiceMock = mock(CatalogService.class);
-    catalogServiceMock.expects(once())
-        .method("getProductListByCategory")
-        .with(NOT_NULL)
-        .will(returnValue(new PaginatedArrayList(5)));
-    AccountBean accountBean = new AccountBean((AccountService)accountServiceMock.proxy(), (CatalogService)catalogServiceMock.proxy());
-    accountBean.setAccount(account);
-    accountBean.signon();
-
-    Map sessionMap = ActionContext.getActionContext().getSessionMap();
-    sessionMap.put("accountBean", accountBean);
-
-    Mock orderServiceMock = mock(OrderService.class);
-    OrderBean bean = new OrderBean((AccountService)accountServiceMock.proxy(), (OrderService)orderServiceMock.proxy());
-    assertEquals(AbstractBean.FAILURE, bean.newOrderForm());
-  }
+ 
 
   public void testSuccessfullyViewCart() {
     Account account = DomainFixture.newTestAccount();
