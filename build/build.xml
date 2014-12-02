@@ -91,7 +91,7 @@
   </target>
 
   <target name="test" depends="coverage.instrument">
-    <junit printsummary="yes" haltonfailure="no" fork="yes" forkmode="once" maxmemory="1024m" failureproperty="junit.failure">
+    <junit printsummary="yes" haltonfailure="no" fork="no" forkmode="once" maxmemory="1024m" failureproperty="junit.failure">
       <classpath refid="classpath"/>
       <jvmarg value="-Xdebug" />
       <jvmarg value="-Xnoagent"/>
